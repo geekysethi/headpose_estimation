@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import os
 from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
@@ -16,13 +15,9 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['', 'tensorflow-macos',],
+    install_requires=['efficientnet'],
     keywords=['python', 'image', 'face detection', 'headpose estimation', 'machine learning', 'computer vision'],
-
-
     include_package_data=True,
-    
-    package_dir= {"cython":"headpose_estimation/face_detector/rcnn/cython/"}
 
 
 )
