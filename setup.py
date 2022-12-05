@@ -1,12 +1,10 @@
 from setuptools import setup, find_packages
 import os
-
-# here = os.path.abspath(os.path.dirname(__file__))
-
-
-VERSION = '0.0.1'
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+VERSION = '0.0.2'
 DESCRIPTION = 'Head pose estimation module'
-LONG_DESCRIPTION = 'A package that allows to build simple streams of video, audio and camera data.'
 
 # Setting up
 setup(
@@ -16,18 +14,12 @@ setup(
     author_email="<ashish18024@iiitd.ac.in>",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    long_description=LONG_DESCRIPTION,
+    long_description=long_description,
     packages=find_packages(),
-    install_requires=['opencv-python', 'tensorflow-macos',],
-    keywords=['python', 'video', 'stream', 'video stream', 'camera stream', 'sockets'],
-    classifiers=[
-        "Development Status :: 1 - Planning",
-        "Intended Audience :: Developers",
-        "Programming Language :: Python :: 3",
-        "Operating System :: Unix",
-        "Operating System :: MacOS :: MacOS X",
-        "Operating System :: Microsoft :: Windows",
-    ],
+    install_requires=['', 'tensorflow-macos',],
+    keywords=['python', 'image', 'face detection', 'headpose estimation', 'machine learning', 'computer vision'],
+
+
     include_package_data=True,
     
     package_dir= {"cython":"headpose_estimation/face_detector/rcnn/cython/"}
