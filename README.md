@@ -28,25 +28,32 @@ pip install git+https://github.com/geekysethi/headpose_estimation
 
 You can also install with the `setup.py`
 
-## Simple API with Face Detection
+##  With Face Detection
 To perform detection you can simple use the following lines:
 
 ```python
-
-
 import cv2
 from headpose_estimation import Headpose
-
-if __name__ == "__main__":
-
-	headpose = Headpose()
-
-    img = cv2.imread("path_to_im.jpg")
-	detections,image = headpose.run(img)
+headpose = Headpose()
+img = cv2.imread("path_to_im.jpg")
+detections,image = headpose.run(img)
 ```
 
 This will return a list of dictionary which looks like this `[{'bbox': [xmin, ymin, xmax, ymax], 'yaw': yaw_value, 'pitch': pitch_value, 'roll': roll_value}`
 
+
+##  Without Face Detection
+To perform detection you can simple use the following lines:
+
+```python
+import cv2
+from headpose_estimation import Headpose
+headpose = Headpose(face_detection=False)
+imgcrop = cv2.imread("path_to_im.jpg")
+detections,image = headpose.run(imgcrop)
+```
+
+In this case it will return a list of dictionary which looks like this `[{'yaw': yaw_value, 'pitch': pitch_value, 'roll': roll_value}`
 
 ## Dependncies
 * EfficientNet https://github.com/qubvel/efficientnet

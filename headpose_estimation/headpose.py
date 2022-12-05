@@ -107,7 +107,7 @@ class Headpose():
 
 			yaw,pitch,roll = self.detect_headpose(image)
 
-			final_output.append({"bbox":np.array(current_bbox),"yaw":yaw,"pitch": pitch,"roll": roll})
+			final_output.append({"yaw":yaw,"pitch": pitch,"roll": roll})
 			if(self.draw):
 				height,width,_ = image.shape
 				x_min, y_min, x_max,y_max = 0,0,width,height
