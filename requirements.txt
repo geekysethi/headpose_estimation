@@ -2,3 +2,4 @@ tensorflow<3.0
 opencv-python
 efficientnet==1.1.1
 cython
+gdown
