@@ -19,11 +19,11 @@ This repository includes:
 You can install this repository with pip (requires python>=3.6);
 
 ```
-pip install headpose_estimation
+pip install headpose-detection
 ```
 
 ```bash
-pip install git+https://github.com/geekysethi/headpose_estimation
+pip install git+https://github.com/geekysethi/headpose_estimation#egg=headpose-detection
 ```
 
 You can also install with the `setup.py`
